@@ -6,11 +6,14 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     # sessions: 'users/sessions'
   }
-  # devise_for :users
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+
+  get '/users/:id' , to: 'users#show'
+  get '/users/:id/edit' , to: 'users#edit'
+  post '/users/:id/edit' , to: 'users#update'
   # Defines the root path route ("/")
   # root "articles#index"
 end

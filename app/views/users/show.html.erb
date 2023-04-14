@@ -1,0 +1,30 @@
+<div class="row">
+<div class="col">
+     <%= image_tag @user.user_detail.image.url %>
+    <table>
+    <tr>
+        <th>ユーザー名</th>
+    </tr>
+    <tr>
+        <td><%= @user.username %></td>
+    </tr>
+    <tr>
+        <th>メールアドレス</th>
+    </tr>
+    <tr>
+        <td><%= @user.email %></td>
+    </tr>
+    <tr>
+        <th>会社名</th>
+    </tr>
+    <tr>
+    <% if @user.user_detail.nil? %>
+         <td>記載なし</td>
+    <% else %>
+        <td><%= @user.user_detail.company_name %></td>
+    <% end %>
+    </tr>
+    </table>
+</div>
+<div class="col"></div>
+</div>
