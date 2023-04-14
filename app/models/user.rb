@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
          has_one :user_detail
 
-         accepts_nested_attributes_for :user_detail #子として扱うものを追記。複数記述可。
+         accepts_nested_attributes_for :user_detail  #子として扱うものを追記。複数記述可。
 end
