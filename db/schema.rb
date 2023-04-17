@@ -10,9 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_13_001936) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_14_074355) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "channel_posts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "channel_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id"], name: "index_channel_posts_on_channel_id"
+    t.index ["user_id"], name: "index_channel_posts_on_user_id"
+  end
+
+  create_table "channel_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "channel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id"], name: "index_channel_users_on_channel_id"
+    t.index ["user_id"], name: "index_channel_users_on_user_id"
+  end
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_channels_on_name", unique: true
+  end
 
   create_table "user_details", force: :cascade do |t|
     t.bigint "user_id"
@@ -36,5 +62,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_001936) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "channel_posts", "channels"
+  add_foreign_key "channel_posts", "users"
+  add_foreign_key "channel_users", "channels"
+  add_foreign_key "channel_users", "users"
   add_foreign_key "user_details", "users"
 end

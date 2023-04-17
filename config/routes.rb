@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get '/users/:id/edit' , to: 'users#edit'
   post '/users/:id/edit' , to: 'users#update'
   # Defines the root path route ("/")
+  resources :channels
   # root "articles#index"
 end
