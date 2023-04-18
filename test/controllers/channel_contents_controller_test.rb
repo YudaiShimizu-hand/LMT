@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ChannelPostsControllerTest < ActionDispatch::IntegrationTest
+class ChannelContentsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

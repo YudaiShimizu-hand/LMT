@@ -1,0 +1,13 @@
+<%= form_with url: channel_content_create_path(@channel) , local: true do |f| %>
+    <%= f.label :title, "議題" %>
+    <%= f.text_field :title %>
+    <%= f.label :flag, "フラグ" %>
+    <label><%= f.radio_button(:flag, 1)%>提案</label>
+    <label><%= f.radio_button(:flag, 2)%>質問</label>
+    <label> <%= f.radio_button(:flag, 3)%>アナウンス</label>
+    <%= f.label :content, "詳細" %>
+    <%= f.text_area :content %>
+    <%= f.label :emergency, "緊急" %>
+    <%= f.check_box :emergency %>
+    <%= f.submit "送信" %>
+<% end %>

@@ -16,5 +16,9 @@ Rails.application.routes.draw do
   post '/users/:id/edit' , to: 'users#update'
   # Defines the root path route ("/")
   resources :channels
+
+  get '/channel_contents/:channel_id', to: 'channel_contents#index', as: 'channel_content'
+  get '/channel_contents/:channel_id/new', to: 'channel_contents#new', as: 'channel_content_new'
+  post '/channel_contents/:channel_id/create', to: 'channel_contents#create', as: 'channel_content_create'
   # root "articles#index"
 end

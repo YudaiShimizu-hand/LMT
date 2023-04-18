@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ChannelPostTest < ActiveSupport::TestCase
+class ChannelContentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

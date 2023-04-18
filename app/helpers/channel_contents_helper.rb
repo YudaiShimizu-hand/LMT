@@ -1,0 +1,2 @@
+module ChannelContentsHelper
+end
