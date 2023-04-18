@@ -5,3 +5,7 @@
     class: 'dropdown-item',
     method: :delete
     %>
+
+<% @channels.each do |c| %>
+    <%= c.name %>
+<% end %>

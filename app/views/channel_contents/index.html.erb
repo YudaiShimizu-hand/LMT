@@ -1,0 +1,17 @@
+<table>
+<% @channel_contents.each do |channel| %>
+   <tr>
+        <td></td>
+        <% if(channel.flag == 1) %>
+            <td>提案</td>
+        <% elsif(channel.flag == 2) %>
+            <td>質問</td>
+        <% elsif(channel.flag == 3) %>
+            <td>アナウンス</td>
+        <% end %>
+        <td><%= channel.title %></td>
+        <td><%= channel.user.username %></td>
+   </tr>
+   <p>------------------------------------------------------------</p>
+<% end %>
+<table>
