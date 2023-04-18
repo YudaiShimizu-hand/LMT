@@ -1,5 +1,6 @@
 class ChannelContentsController < ApplicationController
     def index
+        @channel_contents = ChannelContent.where(channel_id: params[:channel_id])
     end
 
     def new
