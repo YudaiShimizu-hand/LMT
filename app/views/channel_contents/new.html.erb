@@ -1,13 +1,38 @@
-<%= form_with url: channel_content_create_path(@channel) , local: true do |f| %>
-    <%= f.label :title, "議題" %>
-    <%= f.text_field :title %>
-    <%= f.label :flag, "フラグ" %>
-    <label><%= f.radio_button(:flag, 1)%>提案</label>
-    <label><%= f.radio_button(:flag, 2)%>質問</label>
-    <label> <%= f.radio_button(:flag, 3)%>アナウンス</label>
-    <%= f.label :content, "詳細" %>
-    <%= f.text_area :content %>
-    <%= f.label :emergency, "緊急" %>
-    <%= f.check_box :emergency %>
-    <%= f.submit "送信" %>
-<% end %>
+
+<div class="row">
+    <div class="form">
+       <%= form_with url: channel_content_create_path(@channel) , local: true do |f| %>
+        <div class="form-group">
+            <div class="form-label">
+                 <%= f.label :title, "議題", class: "label-text" %>
+            </div>
+            <div class="form-field">
+                 <%= f.text_field :title, class: "user-field"  %>
+            </div>
+            <div class="form-label">
+                 <%= f.label :flag, "フラグ", class: "label-text" %>
+            </div>
+            <div class="form-field">
+               <label><%= f.radio_button(:flag, 1)%>提案</label>
+               <label><%= f.radio_button(:flag, 2)%>質問</label>
+               <label> <%= f.radio_button(:flag, 3)%>アナウンス</label>
+            </div>
+            <div class="form-label">
+                 <%= f.label :content, "詳細", class: "label-text"  %>
+            </div>
+            <div class="form-field">
+               <%= f.text_area :content, class: "text-area" %>
+            </div>
+            <div class="form-label">
+                  <%= f.label :emergency, "緊急", class: "label-text"  %>
+            </div>
+            <div class="form-field">
+                <%= f.check_box :emergency %>
+            </div>
+            <div class="submit-button">
+                <%= f.submit "新規作成", class:"new-button"%>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>

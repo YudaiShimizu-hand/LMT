@@ -1,17 +1,36 @@
-<table>
-<% @channel_contents.each do |channel| %>
-   <tr>
+<div class="channel-content">
+    <div class="channel-frame">
+        <div class="channel-frame-content">
+        <h2>メニュー</h2>
+             <ul>
+                <li>新規掲示板</li>
+                <li>メンバー一覧</li>
+                <li>ファイル管理</li>
+            </ul>
+        </div>
+    </div>
+    <div class="channel-frame">
+        <table class="channel-table-content" border="1">
+        <tr>
+            <th class="th-tag"></th>
+            <th class="th-tag">フラグ</th>
+            <th class="th-title">内容</th>
+            <th class="th-name">投稿者</th>
+        </tr>
+        <% @channel_contents.each do |channel| %>
+        <tr align="center">
         <td></td>
-        <% if(channel.flag == 1) %>
+            <% if(channel.flag == 1) %>
             <td>提案</td>
-        <% elsif(channel.flag == 2) %>
+            <% elsif(channel.flag == 2) %>
             <td>質問</td>
-        <% elsif(channel.flag == 3) %>
-            <td>アナウンス</td>
+            <% elsif(channel.flag == 3) %>
+            <td>通知</td>
         <% end %>
         <td><%= channel.title %></td>
         <td><%= channel.user.username %></td>
-   </tr>
-   <p>------------------------------------------------------------</p>
-<% end %>
-<table>
+        </tr>
+        <% end %>
+        </table>
+    </div>
+</div>

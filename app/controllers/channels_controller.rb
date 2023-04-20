@@ -25,7 +25,7 @@ class ChannelsController < ApplicationController
       @channel.users << current_user
     end
 
-    @channelposts = ChannelPost.where(channel_id: @channel.id).all
+    @channelposts = ChannelContent.where(channel_id: @channel.id).all
   end
 
   private

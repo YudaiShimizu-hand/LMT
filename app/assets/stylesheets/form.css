@@ -1,0 +1,52 @@
+.form {
+    margin-left: 100px;
+    width: 600px;
+    height: 700px;
+    background-color:azure;
+}
+
+.form-control {
+    margin: 0 auto;
+}
+
+.form-group {
+    padding: 20px  0 0 80px;
+}
+
+.form-label {
+    font-size: 50px;
+}
+
+.em {
+    font-size: 20px;
+}
+
+.label-text {
+    font-size: 20px;
+}
+
+.user-field {
+    width: 300px;
+    height: 30px;
+}
+
+.submit-button {
+    padding-top: 50px;
+}
+
+.edit-button {
+    width: 100px;
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+.new-button {
+    width: 100px;
+    background-color:coral;
+    border-radius: 50%;
+}
+
+.text-area {
+    width: 400px;
+    height: 200px;
+}
