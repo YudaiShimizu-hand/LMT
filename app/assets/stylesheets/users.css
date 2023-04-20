@@ -46,6 +46,25 @@
     border-radius: 10%;
 }
 
+.mychannel {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.mychannel h2 {
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+.mychannel ul {
+    line-height: 3;
+    margin-top: 30px;
+}
+
+.mychannel ul li{
+   font-size: 30px;
+}
+
 
 
 

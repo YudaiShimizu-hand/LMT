@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
+        @myChannel = @user.channels.all
     end
 
     def edit

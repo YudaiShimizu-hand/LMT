@@ -2,9 +2,9 @@
     <div class="user-show-data">
         <div class="user-show-image">
         <% if @user.user_detail.image.nil? %>
-            <img src="/assets/no-image" alt="">
-        <% else %>
              <%= image_tag @user.user_detail.image.url %>
+        <% else %>
+             <img src="/assets/no-image" alt="">
         <% end %>
         </div>
         <table class="user-show-table">
@@ -38,5 +38,13 @@
         </div>
     </div>
     <div class="user-mychannel">
+        <div class="mychannel">
+            <h2>マイチャンネル</h2>
+            <ul>
+            <% @user.channels.each do |channel| %>
+                <li><%= link_to "#{channel.name}", channel_content_path(channel.id) %></li>
+            <% end %>
+            </ul>
+        </div>
     </div>
 </div>
