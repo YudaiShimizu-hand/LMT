@@ -57,6 +57,12 @@ header {
 
 .header .header-ul .header-li {
     margin-left: 10px;
+    color: white;
+}
+
+.header-link {
+    color:white;
+    text-decoration: none;
 }
 
 body {
