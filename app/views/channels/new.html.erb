@@ -1,10 +1,23 @@
-<div class="channel-form">
-    <h1>チャンネル作成</h1>
-    <%= form_with model: @channel do |f| %>
-        <%= f.label :name, "チャンネル名"%>
-        <%= f.text_field :name %>
-        <%= f.label "チャットメンバー"%>
-        <%= f.collection_check_boxes :user_ids, User.all, :id, :username, {}, { multiple: true } %>
-        <%= f.submit "新規作成" %>
-    <% end %>
+<div class="row">
+    <div class="form">
+       <%= form_with model: @channel do |f| %>
+        <div class="form-group">
+            <div class="form-label">
+                <%= f.label :name, "チャンネル名", class: "label-text" %>
+            </div>
+            <div class="form-field">
+                 <%= f.text_field :name, class: "user-field" %>
+            </div>
+            <div class="form-label">
+                <%= f.label "チャットメンバー", class: "label-text" %>
+            </div>
+            <div class="form-field">
+               <%= f.collection_check_boxes :user_ids, User.all, :id, :username, {}, { multiple: true } %>
+            </div>
+            <div class="submit-button">
+                <%= f.submit "新規作成", class:"new-button"%>
+            </div>
+        </div>
+        <% end %>
+    </div>
 </div>

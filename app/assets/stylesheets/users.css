@@ -1,0 +1,70 @@
+
+
+/* user詳細ページ */
+.user-show {
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-show-data {
+    width: 600px;
+    height: 700px;
+    background-color:bisque;
+    border-radius: 10%;
+}
+
+.user-show-image {
+    text-align: center;
+    padding: 50px;
+}
+
+.user-show-image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+}
+
+.user-show-table {
+    text-align: center;
+}
+
+
+.user-show-table {
+    margin: 0 auto;
+    line-height: 3;
+}
+
+.user-edit-link {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.user-mychannel {
+    width: 600px;
+    height: 700px;
+    background-color:bisque;
+    border-radius: 10%;
+}
+
+.mychannel {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.mychannel h2 {
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+.mychannel ul {
+    line-height: 3;
+    margin-top: 30px;
+}
+
+.mychannel ul li{
+   font-size: 30px;
+}
+
+
+
+

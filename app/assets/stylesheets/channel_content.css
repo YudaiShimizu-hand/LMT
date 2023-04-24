@@ -1,0 +1,54 @@
+.channel-content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.channel-frame {
+    width: 800px;
+    height: 700px;
+    border-radius: 20%;
+    background-color:antiquewhite;
+}
+
+/* .channel-frame-content {
+    width: 700px;
+    height: 600px;
+    background-color: azure;
+    border-radius: 20%;
+    margin: 50px;
+} */
+.channel-content {
+    text-align: center;
+}
+
+.channel-content h2 {
+    margin: 50px;
+    background-color: aqua;
+    border-radius: 40%;
+}
+
+.channel-content ul li{
+  font-size: 20px;
+  line-height: 4;
+}
+
+
+.channel-table-content {
+   margin: 70px;
+}
+
+.th-tag {
+    width: 60px;
+}
+
+.th-title {
+    width: 350px;
+}
+
+.th-name {
+    width: 150px;
+}
+
+
+
+

@@ -1,15 +1,35 @@
 <div class="row">
-    <div class="col">
-     <%= form_with modle: @user , local: true do |f| %>
-        <%= f.label :username, 'ユーザー名' %>
-        <%= f.text_field :username, value: "#{@user.username}" %>
-        <%= f.label :email, 'メールアドレス' %>
-        <%= f.email_field :email, value: "#{@user.email}"  %>
-        <%= f.label :image, 'プロフィール画像' %>
-        <%= f.file_field :image %>
-        <%= f.label :company_name, '会社名' %>
-        <%= f.text_field :company_name %>
-        <%= f.submit "送信"%>
-    <% end %>
+    <div class="form">
+        <%= form_with modle: @user , local: true do |f| %>
+        <div class="form-group">
+            <div class="form-label">
+                <%= f.label :username, 'ユーザー名', class: "label-text" %>
+            </div>
+            <div class="form-field">
+                <%= f.text_field :username, value: "#{@user.username}", class: "user-field"%>
+            </div>
+            <div class="form-label">
+                <%= f.label :email, 'メールメールアドレス', class: "label-text" %>
+            </div>
+            <div class="form-field">
+                <%= f.text_field :email, value: "#{@user.email}", class: "user-field"%>
+            </div>
+            <div class="form-label">
+            <%= f.label :image, 'プロフィール画像', class: "label-text"  %>
+            </div>
+            <div class="form-field">
+                <%= f.file_field :image, class: "user-field" %>
+            </div>
+            <div class="form-label">
+            <%= f.label :company_name, '会社名', class: "label-text"  %>
+            </div>
+            <div class="form-field">
+                <%= f.text_field :company_name, class: "user-field" %>
+            </div>
+            <div class="submit-button">
+                <%= f.submit "編集", class:"edit-button"%>
+            </div>
+        </div>
+        <% end %>
     </div>
 </div>

@@ -1,0 +1,17 @@
+<header>
+    <div class="header">
+        <h1 class="header-logo">
+            <%= link_to "LMT", "#", class: 'header-link' %>
+        </h1>
+        <ul class="header-ul">
+        <% if user_signed_in? %>
+            <li class="header-li"><%= link_to "#{current_user.username}", "/users/#{current_user.id}", class: 'header-link' %></li>
+            <li class="header-li">設定</li>
+            <li class="header-li"><%= link_to "チャンネル追加", new_channel_path, class: 'header-link' %></li>
+            <li class="header-li"> <%= link_to 'ログアウト', destroy_user_session_path, class: 'header-link',method: :delete %></li>
+        <% else %>
+            <li class="header-li">ログイン</li>
+        <% end %>
+        </ul>
+    </div>
+</header>

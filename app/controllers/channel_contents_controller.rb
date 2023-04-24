@@ -1,6 +1,10 @@
 class ChannelContentsController < ApplicationController
+
+    before_action :channel_join_memeber ,only: [:index, new, :create]
+
     def index
         @channel_contents = ChannelContent.where(channel_id: params[:channel_id])
+        @channel = Channel.find(params[:channel_id])
     end
 
     def new
@@ -25,5 +29,16 @@ class ChannelContentsController < ApplicationController
 
     def channel_content_params
         params.permit(:title, :flag, :content, :emergency)
+    end
+
+    def channel_join_memeber
+        @channel = Channel.find_by(id: params[:channel_id])
+        @channel_box = []
+        @channel.channel_users.each do |user|
+           @channel_box.push(user.user_id.to_s)
+        end
+        if @channel_box.include?(current_user.id.to_s) == false
+            redirect_to root_path
+        end
     end
 end

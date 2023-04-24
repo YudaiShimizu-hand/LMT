@@ -2,18 +2,15 @@ require 'user_detail'
 class UsersController < ApplicationController
 
     before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+    before_action :current_user_only, only: [:show, :edit, :update, :destroy]
 
     def show
         @user = User.find_by(id: params[:id])
+        @myChannel = @user.channels.all
     end
 
     def edit
         @user = User.find(params[:id])
-        if @user.id == current_user.id
-            render "edit"
-        else
-          redirect_to root_path
-        end
     end
 
     def update
@@ -33,6 +30,13 @@ class UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:username, :email, :image, :company_name)
+    end
+
+    def current_user_only
+        @user_id = User.find(params[:id])
+        if @user_id.id != current_user.id
+            redirect_to root_path
+        end
     end
 
 end
